@@ -32,6 +32,8 @@ dependencies {
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.3.1'
+    // JSP Compile 을 위한 라이브러리 추가
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 }
 
 tasks.named('bootBuildImage') {
