@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="board.mapper.UserMapper">
+<mapper namespace="com.example.board.mapper.UserMapper">
 
-    <resultMap id="userResultMap" type="board.user.entity.User">
+    <resultMap id="userResultMap" type="com.example.board.user.entity.User">
         <id property="id" column="id" />
         <result property="userId" column="user_id" />
         <result property="password" column="password" />
@@ -13,16 +13,14 @@
         <result property="deletedAt" column="deleted_at" />
     </resultMap>
 
-    <select id="findByUserId" resultMap="userResultMap">
+    <insert id="signUp" parameterType="com.example.board.user.controller.routes.UserSignUpRequest">
+        INSERT INTO USER (USER_ID, PASSWORD, NICKNAME, CREATED_AT, UPDATED_AT, DELETED_AT)
+        VALUES (#{userId}, #{password}, #{nickname}, NOW(), NOW(), NULL)
+    </insert>
+    <select id="isUserIdPasswordSame" parameterType="com.example.board.user.controller.routes.UserLoginRequest">
         SELECT *
-        FROM User U
-        WHERE U.user_id = #{userId}
+        FROM USER U
+        WHERE U.user_id = #{userId} AND U.password = #{password}
     </select>
-
-    <select id="signUp" resultMap="userResultMap">
-        INSERT INTO USER
-        VALUES (USER_ID, PASSWORD, NICKNAME)
-    </select>
-
 
 </mapper>

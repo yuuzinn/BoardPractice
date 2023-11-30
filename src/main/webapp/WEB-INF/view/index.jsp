@@ -11,6 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-
+<a href="signup">회원가입 하러 가기</a>
+<a href="login">로그인</a>
+<a href="logout">로그아웃</a>
 </body>
 </html>

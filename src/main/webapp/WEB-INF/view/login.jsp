@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+    <title>로그인</title>
 </head>
 <body>
 
-<h2>회원가입 양식</h2>
+<h2>로그인 양식</h2>
 
-<form action="/signup" method="post">
+<form action="/login" method="post">
     <label for="username">아이디:</label>
     <input type="text" id="username" name="userId" required>
 
@@ -18,12 +18,7 @@
     <label for="password">비밀번호:</label>
     <input type="password" id="password" name="password" required>
 
-    <br>
-
-    <label for="nickname">닉네임:</label>
-    <input type="text" id="nickname" name="nickname" required>
-
-    <input type="submit" value="가입하기">
+    <input type="submit" value="로그인">
 </form>
 
 </body>
