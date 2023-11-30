@@ -1,5 +1,6 @@
 package com.example.board.user.controller;
 
+import com.example.board.common.config.LoginCheck;
 import com.example.board.user.controller.routes.UserLoginRequest;
 import com.example.board.user.controller.routes.UserSignUpRequest;
 import com.example.board.user.entity.User;
@@ -34,6 +35,7 @@ public class UserController {
         return "loginSuccess";
     }
     @PostMapping("/logout")
+    @LoginCheck
     public String logOut(HttpSession session) {
         session.invalidate();
         System.out.println("로그아웃 성공");
